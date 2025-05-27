@@ -34,7 +34,7 @@
 
     <t t-name="Geoengine.Record">
         <div>
-            <t t-raw="widget.content" />
+            <t t-out="widget.content" />
         </div>
     </t>
 

@@ -1,4 +1,6 @@
 """The GeoEngine module"""
+
+from . import geo_convertion_helper
 from . import geo_model
 from . import geo_operators
 from . import geo_view

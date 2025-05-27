@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Geospatial support for Odoo",
-    "version": "14.0.1.0.1",
+    "version": "15.0.1.0.0",
     "category": "GeoBI",
     "author": "Camptocamp,ACSONE SA/NV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
@@ -11,16 +11,21 @@
     "depends": ["base", "web"],
     "data": [
         "security/data.xml",
-        "views/assets.xml",
         "views/base_geoengine_view.xml",
-        "geo_ir/ir_model_view.xml",
-        "geo_view/ir_view_view.xml",
-        "geo_view/geo_raster_layer_view.xml",
-        "geo_view/geo_vector_layer_view.xml",
+        "views/ir_model_view.xml",
+        "views/ir_view_view.xml",
+        "views/geo_raster_layer_view.xml",
+        "views/geo_vector_layer_view.xml",
         "security/ir.model.access.csv",
     ],
     "external_dependencies": {"python": ["shapely", "geojson", "simplejson"]},
-    "qweb": ["static/src/xml/geoengine.xml"],
+    "assets": {
+        "web.assets_backend": [
+            "/base_geoengine/static/src/js/**/*.js",
+            "/base_geoengine/static/src/css/style.css",
+        ],
+        "web.assets_qweb": ["/base_geoengine/static/src/xml/geoengine.xml"],
+    },
     "installable": True,
     "pre_init_hook": "init_postgis",
 }

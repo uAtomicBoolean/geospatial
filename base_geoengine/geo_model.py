@@ -65,7 +65,7 @@ class GeoModel(models.AbstractModel):
         def set_field_real_name(in_tuple):
             if not in_tuple:
                 return in_tuple
-            name = field_obj.browse(in_tuple[0]).name
+            name = field_obj.sudo().browse(in_tuple[0]).name
             out = (in_tuple[0], name, in_tuple[1])
             return out
 

@@ -45,7 +45,7 @@ def geo_search(model, domain=None, geo_domain=None, offset=0, limit=None, order=
     cr = model._cr
     domain = domain or []
     geo_domain = geo_domain or []
-    model.env["ir.model.access"].check(model._name, "read")
+    model.env["ir.model.access"].sudo().check(model._name, "read")
     query = model._where_calc(domain, active_test=True)
     model._apply_ir_rules(query, "read")
     order_by = ""
